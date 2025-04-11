@@ -1,4 +1,4 @@
-# KamakshiChatbot - AI Art Analysis & Market Intelligence Platform
+# AiArtCritiqueBot - AI Art Analysis & Market Intelligence Platform
 
 A sophisticated AI-powered platform for art analysis, critique, and market intelligence. This application leverages Google's Generative AI to provide detailed artwork analysis, market valuations, and real-time art news, helping art enthusiasts, collectors, and professionals make informed decisions.
 
