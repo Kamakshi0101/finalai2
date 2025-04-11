@@ -47,7 +47,6 @@ A sophisticated AI-powered platform for art analysis, critique, and market intel
 1. Clone the repository
 ```bash
 git clone https://github.com/Kamakshi0101/finalai2.git
-cd kamakshichatbot
 ```
 
 2. Create and activate virtual environment
