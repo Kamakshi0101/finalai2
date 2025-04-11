@@ -16,14 +16,27 @@ class ChatHandler:
         if not self.artwork_context:
             return {"error": "No artwork has been analyzed yet. Please upload an image first."}
         
-        # Construct the context-aware prompt with formatting instructions
-        context = f"""Based on the following artwork analysis:
+        # Validate that the question is art-related
+        art_keywords = ['art', 'painting', 'artist', 'artwork', 'style', 'composition', 'color', 'technique', 'period', 'movement', 'canvas', 'gallery', 'museum', 'exhibition', 'curator', 'brush', 'palette', 'perspective', 'portrait', 'landscape']
+        
+        if not any(keyword in user_message.lower() for keyword in art_keywords):
+            return {"error": "I can only answer questions related to artwork and art history. Please ask something about the artwork being analyzed."}
+
+        # Construct the context-aware prompt with art-focused instructions
+        context = f"""You are an art expert AI assistant. Your role is to provide insights and analysis ONLY about artwork, art history, artistic techniques, and related topics. Never discuss topics unrelated to art.
+        
+        Based on the following artwork analysis:
         Summary: {self.artwork_context['summary']}
         Critique: {self.artwork_context['critique']}
         Similar Artists: {', '.join(self.artwork_context['similarArtists'])}
         Similar Paintings: {', '.join(self.artwork_context['similarPaintings'])}
         
         Please respond to this user message about the artwork: {user_message}
+        
+        Remember:
+        - Only provide information related to art and the artwork being discussed
+        - If the question is not about art, politely redirect the user to ask about the artwork
+        - Focus on artistic elements, techniques, history, and cultural context
         
         IMPORTANT FORMATTING INSTRUCTIONS:
         1. Structure your response with clear sections using bold headings (**Heading**) when appropriate
