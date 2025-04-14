@@ -133,3 +133,5 @@ If you encounter any issues or have questions, please file an issue on the GitHu
 ## ⚠️ Disclaimer
 
 This application's art analysis and market valuations are for informational purposes only and should not be considered as professional appraisals. Always consult with qualified art experts for official valuations and authentication.
+
+# finalai2
